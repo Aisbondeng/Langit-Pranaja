@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 7%;
+    --foreground: 0 0% 88%;
+    
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 265 67% 51%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 330 94% 58%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 240 10% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 265 67% 51%;
+    
+    --radius: 0.5rem;
+    
+    --chart-1: 265 67% 51%;
+    --chart-2: 330 94% 58%;
+    --chart-3: 180 100% 50%;
+    --chart-4: 50 100% 50%;
+    --chart-5: 265 40% 40%;
+    
+    --sidebar-background: 240 10% 7%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 265 67% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 330 94% 58%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 10% 15%;
+    --sidebar-ring: 265 67% 51%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Player progress bar custom styling */
+  .player-progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: hsl(var(--secondary));
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .volume-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--secondary));
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Sidebar active item styling */
+  .sidebar-item.active {
+    border-left: 3px solid hsl(var(--secondary));
+    background-color: rgba(247, 37, 133, 0.1);
+    padding-left: calc(1rem - 3px);
+  }
+  
+  /* Custom dark backgrounds */
+  .bg-dark-DEFAULT {
+    background-color: #121212;
+  }
+  
+  .bg-dark-lighter {
+    background-color: #1E1E1E;
+  }
+  
+  .bg-dark-lightest {
+    background-color: #2D2D2D;
+  }
+}
