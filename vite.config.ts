@@ -1,21 +1,15 @@
+// ~/Langit-Pranaja/vite.config.ts
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
-  // Mengatur base path untuk GitHub Pages
+  root: './client',
   base: '/Langit-Pranaja/',
-
-  // Konfigurasi build
-  build: {
-    rollupOptions: {
-      // Tentukan path ke file index.html (biasanya di root folder atau folder public)
-      input: 'index.html',  // Ganti dengan path yang benar jika index.html di folder lain
-    },
-  },
-
-  // Opsional: jika menggunakan alias atau konfigurasi lain
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': '/src',
-    },
-  },
+      '@': path.resolve(__dirname, 'client/src') // Menetapkan alias '@' ke folder 'src'
+    }
+  }
 })
