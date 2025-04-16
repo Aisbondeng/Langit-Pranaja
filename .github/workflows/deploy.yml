@@ -28,6 +28,9 @@ jobs:
         run: npm run build
         working-directory: ./client
 
+      - name: Debug: List files in dist folder
+        run: ls -la ./client/dist
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
